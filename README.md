@@ -12,8 +12,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [x] Create & source html, js, jquery and css files
 - [x] Write HTML that will be rough template of app (with titles, inputs, buttons, table)
 - [x] Write "submit employee info" functionality
-- [] Use jQuery to collect employee info on click of submit button and append to
-    DOM in a row of a table
+- [x] Use jQuery to collect employee info on click of submit button and append to DOM in a row of a table
 - [] Write "calculate monthly cost" functionality
 - [] Use jQuery to display total monthly cost on DOM
 - [] Write "delete employee info" functionality

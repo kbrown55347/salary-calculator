@@ -36,6 +36,8 @@ function handleSubmitEmployeeClick() {
 
     // call appendEmployeeInfo 
     appendEmployeeInfo(employeeList);
+    // call calculateMonthlyCost
+    calculateMonthlyCost(employeeList);
 }
 
 // Create function to empty then append employeeList info onto DOM in table
@@ -56,5 +58,21 @@ function appendEmployeeInfo(employees) {
         `;
         $('#employee-table-body').append(newTableRow);
     }
-    console.log(employeeList);
+}
+
+// Write function that takes in parameter of employees array and sums 
+// monthly cost of employees
+function calculateMonthlyCost(employees) {
+// set sum variable equal to 0
+    let sum = 0;
+// loop through array of employees
+    for (let employee of employees) {
+// add annualSalary for each employee to sum
+    sum += employee.annualSalary;
+    }
+// set monthlyCost variable equal to sum divided by 12
+let monthlyCost = (sum / 12);
+// empty then append monthlyCost to monthly-cost id
+$('#monthly-cost').empty();
+$('#monthly-cost').append(monthlyCost.toFixed(2));
 }
