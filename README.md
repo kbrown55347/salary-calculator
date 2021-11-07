@@ -1,27 +1,34 @@
 # Salary Calculator
 
 ## Description
+---
 
 Duration: 3 days
 
 I created an application that records employee salaries and calculates monthly salary costs for the company. 
 
-To accomplish this, 
+To accomplish this, I first created funcionality to take in user input information for an employee and add that information to the DOM as a row in a table. I then added functionality to take in all employee salaries and calculate the total monthly cost for the company. If the total monthly cost exceeds $20,000, a red background color is displayed. Lastly, I created functionality to delete an employee from the table and deduct that employee's salary from the total monthly cost.
 
 
-Your project description goes here. What problem did you solve? How did you solve it?
+## Screen Shot
+---
+![alt text](salarycalculator.png)
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Usage
+---
+1. Fill each input field with employee's information.
 
-## Development Plan
-- [x] Create & source html, js, jquery and css files
-- [x] Write HTML that will be rough template of app (with titles, inputs, buttons, table)
-- [x] Write "submit employee info" functionality
-- [x] Use jQuery to collect employee info on click of submit button and append to DOM in a row of a table
-- [x] Write "calculate monthly cost" functionality
-- [x] Use jQuery to display total monthly cost on DOM
-- [x] Write "delete employee info" functionality
-- [x] Use jQuery to remove employee info from DOM
-## Stretch Goals
-- [x] Styling
-- [] Write "remove employee salary from total" functionality & use jQuery to update info on DOM
+2. Click submit to add employee to the table.
+
+3. To remove an employee, click the 'delete' button on the right of the employee's row in the table.
+
+## Built With
+---
+- HTML
+- CSS
+- JavaScript
+- jQuery
+
+## Acknowledgment
+---
+Thank you to Prime Digital Academy, my instructor and my classmates who equipped and helped me to make this application.
