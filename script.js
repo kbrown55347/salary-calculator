@@ -3,6 +3,7 @@ $(document).ready(readyNow);
 function readyNow() {
     // use jQuery to add employee on submit button click
     $('#submit-button').on('click', handleSubmitEmployeeClick);
+    $('tbody').on('click', '#delete-button', handleDeleteClick);
 }
 
 let employeeList = [];
@@ -39,7 +40,6 @@ function handleSubmitEmployeeClick() {
     // call calculateMonthlyCost
     calculateMonthlyCost(employeeList);
 }
-
 // Create function to empty then append employeeList info onto DOM in table
 function appendEmployeeInfo(employees) {
     $('#employee-table-body').empty();
@@ -52,14 +52,13 @@ function appendEmployeeInfo(employees) {
                 <td>${employee.lastName}</td>
                 <td>${employee.idNumber}</td>
                 <td>${employee.jobTitle}</td>
-                <td>${employee.annualSalary}</td>
+                <td>$${employee.annualSalary}</td>
                 <td><button id='delete-button'>Delete</button></td>
             </tr>
         `;
         $('#employee-table-body').append(newTableRow);
     }
 }
-
 // Write function that takes in parameter of employees array and sums 
 // monthly cost of employees
 function calculateMonthlyCost(employeesList) {
@@ -82,3 +81,10 @@ $('#monthly-cost-number').append(monthlyCost.toFixed(2));
     $('#monthly-cost-title').toggleClass('highlight');
     }
 }
+// Write "delete employee info" functionality
+function handleDeleteClick() {
+    // let index = $('delete-button').index(this);
+    // employeeList.splice(index);
+    $(this).closest('tr').remove();
+}
+
