@@ -3,7 +3,7 @@ $(document).ready(readyNow);
 function readyNow() {
     // use jQuery to add employee on submit button click
     $('#submit-button').on('click', handleSubmitEmployeeClick);
-    $('tbody').on('click', '#delete-button', handleDeleteClick);
+    $('tbody').on('click', '.delete-button', handleDeleteClick);
 }
 
 let employeeList = [];
@@ -48,12 +48,12 @@ function appendEmployeeInfo(employees) {
     // add info for each employee as row in table
         let newTableRow = `
             <tr>
-                <td>${employee.firstName}</td>
+                <td class="first-name">${employee.firstName}</td>
                 <td>${employee.lastName}</td>
                 <td>${employee.idNumber}</td>
                 <td>${employee.jobTitle}</td>
                 <td>$${employee.annualSalary}</td>
-                <td><button id='delete-button'>Delete</button></td>
+                <td><button class='delete-button'>Delete</button></td>
             </tr>
         `;
         $('#employee-table-body').append(newTableRow);
@@ -83,8 +83,13 @@ $('#monthly-cost-number').append(monthlyCost.toFixed(2));
 }
 // Write "delete employee info" functionality
 function handleDeleteClick() {
-    // let index = $('delete-button').index(this);
+    // let index = $('#delete-button').index(this);
     // employeeList.splice(index);
+        let val = $(this).closest('tr').find('.first-name').text();
+        // console.log(val);
+        index = employeeList.findIndex(function(item) {return item.firstName === val});
+        // console.log(index);
+        employeeList.splice(index, 1);
     $(this).closest('tr').remove();
 }
 
