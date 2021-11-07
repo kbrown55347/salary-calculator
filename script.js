@@ -62,17 +62,23 @@ function appendEmployeeInfo(employees) {
 
 // Write function that takes in parameter of employees array and sums 
 // monthly cost of employees
-function calculateMonthlyCost(employees) {
+function calculateMonthlyCost(employeesList) {
 // set sum variable equal to 0
     let sum = 0;
 // loop through array of employees
-    for (let employee of employees) {
+    for (let employee of employeesList) {
 // add annualSalary for each employee to sum
     sum += employee.annualSalary;
     }
 // set monthlyCost variable equal to sum divided by 12
 let monthlyCost = (sum / 12);
-// empty then append monthlyCost to monthly-cost id
-$('#monthly-cost').empty();
-$('#monthly-cost').append(monthlyCost.toFixed(2));
+// empty then append monthlyCost to monthly-cost-number id
+$('#monthly-cost-number').empty();
+$('#monthly-cost-number').append(monthlyCost.toFixed(2));
+
+// If the total monthly cost exceeds $20,000
+    if (monthlyCost > 20000) {
+    // add red background color to total monthly cost
+    $('#monthly-cost-title').toggleClass('highlight');
+    }
 }
