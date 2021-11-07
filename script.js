@@ -48,9 +48,9 @@ function appendEmployeeInfo(employees) {
     // add info for each employee as row in table
         let newTableRow = `
             <tr>
-                <td class="first-name">${employee.firstName}</td>
+                <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
-                <td>${employee.idNumber}</td>
+                <td class="id-number">${employee.idNumber}</td>
                 <td>${employee.jobTitle}</td>
                 <td>$${employee.annualSalary}</td>
                 <td><button class='delete-button'>Delete</button></td>
@@ -75,21 +75,21 @@ let monthlyCost = (sum / 12);
 $('#monthly-cost-number').empty();
 $('#monthly-cost-number').append(monthlyCost.toFixed(2));
 
-// If the total monthly cost exceeds $20,000
-    if (monthlyCost > 20000) {
+// If the total monthly cost exceeds $20,000.00
+    if (monthlyCost > 20000.00) {
     // add red background color to total monthly cost
     $('#monthly-cost-title').toggleClass('highlight');
     }
 }
 // Write "delete employee info" functionality
 function handleDeleteClick() {
-    // let index = $('#delete-button').index(this);
+    // let index = $('.delete-button').index(this);
     // employeeList.splice(index);
-        let val = $(this).closest('tr').find('.first-name').text();
-        // console.log(val);
-        index = employeeList.findIndex(function(item) {return item.firstName === val});
-        // console.log(index);
-        employeeList.splice(index, 1);
+    let val = $(this).closest('tr').find('.id-number').text();
+    console.log(val);
+    let index = employeeList.findIndex(function(item) {return item.idNumber === Number(val)});
+    console.log(index);
+    employeeList.splice(index, 1);
     $(this).closest('tr').remove();
 }
 

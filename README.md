@@ -15,9 +15,9 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [x] Use jQuery to collect employee info on click of submit button and append to DOM in a row of a table
 - [x] Write "calculate monthly cost" functionality
 - [x] Use jQuery to display total monthly cost on DOM
-- [] Write "delete employee info" functionality
-- [] Use jQuery to remove employee info from DOM
-- [] Basic Styling
+- [x] Write "delete employee info" functionality
+- [x] Use jQuery to remove employee info from DOM
+- [x] Basic Styling
 ## Stretch Goals
 - [] Advanced Styling
 - [] Write "remove employee salary from total" functionality & use jQuery to update info on DOM
