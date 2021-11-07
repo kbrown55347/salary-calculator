@@ -78,18 +78,21 @@ $('#monthly-cost-number').append(monthlyCost.toFixed(2));
 // If the total monthly cost exceeds $20,000.00
     if (monthlyCost > 20000.00) {
     // add red background color to total monthly cost
-    $('#monthly-cost-title').toggleClass('highlight');
+    $('#monthly-cost-title').addClass('highlight');
+    }
+    if (monthlyCost <= 20000.00) {
+        $('#monthly-cost-title').removeClass('highlight');
     }
 }
 // Write "delete employee info" functionality
 function handleDeleteClick() {
-    // let index = $('.delete-button').index(this);
-    // employeeList.splice(index);
     let val = $(this).closest('tr').find('.id-number').text();
-    console.log(val);
+    // console.log(val);
     let index = employeeList.findIndex(function(item) {return item.idNumber === Number(val)});
-    console.log(index);
+    // console.log(index);
     employeeList.splice(index, 1);
     $(this).closest('tr').remove();
+
+    calculateMonthlyCost(employeeList);
 }
 

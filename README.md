@@ -1,8 +1,13 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Salary Calculator
 
 ## Description
+
+Duration: 3 days
+
+I created an application that records employee salaries and calculates monthly salary costs for the company. 
+
+To accomplish this, 
+
 
 Your project description goes here. What problem did you solve? How did you solve it?
 
@@ -17,7 +22,6 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [x] Use jQuery to display total monthly cost on DOM
 - [x] Write "delete employee info" functionality
 - [x] Use jQuery to remove employee info from DOM
-- [x] Basic Styling
 ## Stretch Goals
-- [] Advanced Styling
+- [x] Styling
 - [] Write "remove employee salary from total" functionality & use jQuery to update info on DOM
