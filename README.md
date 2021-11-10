@@ -3,7 +3,7 @@
 ## Description
 ---
 
-Duration: 3 days
+Duration: 4 days
 
 I created an application that records employee salaries and calculates monthly salary costs for the company. 
 
@@ -16,7 +16,7 @@ To accomplish this, I first created funcionality to take in user input informati
 
 ## Usage
 ---
-1. Fill each input field with employee's information.
+1. Fill in each input field with employee's information. All input fields must be filled to submit a new employee.
 
 2. Click submit to add employee to the table.
 
