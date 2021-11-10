@@ -20,26 +20,30 @@ function handleSubmitEmployeeClick() {
         annualSalary: $('#salary-input').val(),
     };
     // only run if inputs are filled and checkInputFields returns false
-    if (checkInputFields(newEmployee)){
+    if (checkInputFields(newEmployee)) {
         alert('Please fill out all fields!');
         return;
     }
     // push to employeeList array
     employeeList.push(newEmployee);
 
-    // clear input fields
-    $('#first-name-input').val('');
-    $('#last-name-input').val('');
-    $('#id-input').val('');
-    $('#job-title-input').val('');
-    $('#salary-input').val('');
-
+    // run function to clear input fields
+    clearInputFields();
     // call appendEmployeeInfo 
     appendEmployeeInfo(employeeList);
     // call calculateMonthlyCost
     calculateMonthlyCost(employeeList);
 }
 
+
+// Create function to clear input fields
+function clearInputFields() {
+    $('#first-name-input').val('');
+    $('#last-name-input').val('');
+    $('#id-input').val('');
+    $('#job-title-input').val('');
+    $('#salary-input').val('');
+}
 
 // Create function to check if all inputs are filled
 function checkInputFields(employee) {
