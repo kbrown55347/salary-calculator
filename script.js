@@ -11,19 +11,18 @@ let employeeList = [];
 // Create handleSubmitEmployeeClick function that collects info from 
 // input fields and adds to employeeList array
 function handleSubmitEmployeeClick() {
-    // Set variables equal to .val() from each input field
-    let newFirstName = $('#first-name-input').val();
-    let newLastName = $('#last-name-input').val();
-    let newIdNumber = $('#id-input').val();
-    let newJobTitle = $('#job-title-input').val();
-    let newAnnualSalary = $('#salary-input').val();
-    // add employee info as object
+    // add new input employee info as object
     let newEmployee = {
-        firstName: newFirstName,
-        lastName: newLastName,
-        idNumber: Number(newIdNumber),
-        jobTitle: newJobTitle,
-        annualSalary: Number(newAnnualSalary),
+        firstName: $('#first-name-input').val(),
+        lastName: $('#last-name-input').val(),
+        idNumber: $('#id-input').val(),
+        jobTitle: $('#job-title-input').val(),
+        annualSalary: $('#salary-input').val(),
+    };
+    // only run if inputs are filled and checkInputFields returns false
+    if (checkInputFields(newEmployee)){
+        alert('Please fill out all fields!');
+        return;
     }
     // push to employeeList array
     employeeList.push(newEmployee);
@@ -40,6 +39,16 @@ function handleSubmitEmployeeClick() {
     // call calculateMonthlyCost
     calculateMonthlyCost(employeeList);
 }
+
+
+// Create function to check if all inputs are filled
+function checkInputFields(employee) {
+    if(employee.firstName === '' || employee.lastName === '' || employee.idNumber === '' || employee.jobTitle === '' || employee.annualSalary === '') {
+        return true;
+    }
+    return false;
+}
+
 // Create function to empty then append employeeList info onto DOM in table
 function appendEmployeeInfo(employees) {
     $('#employee-table-body').empty();
@@ -67,7 +76,7 @@ function calculateMonthlyCost(employeesList) {
 // loop through array of employees
     for (let employee of employeesList) {
 // add annualSalary for each employee to sum
-    sum += employee.annualSalary;
+    sum += Number(employee.annualSalary);
     }
 // set monthlyCost variable equal to sum divided by 12
 let monthlyCost = (sum / 12);
@@ -88,7 +97,7 @@ $('#monthly-cost-number').append(monthlyCost.toFixed(2));
 function handleDeleteClick() {
     let val = $(this).closest('tr').find('.id-number').text();
     // console.log(val);
-    let index = employeeList.findIndex(function(item) {return item.idNumber === Number(val)});
+    let index = employeeList.findIndex(function(item) {return item.idNumber === val});
     // console.log(index);
     employeeList.splice(index, 1);
     $(this).closest('tr').remove();
